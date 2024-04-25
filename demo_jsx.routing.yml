@@ -1,0 +1,7 @@
+demo_jsx.react_component:
+  path: '/react-component'
+  defaults:
+    _controller: '\Drupal\demo_jsx\Controller\ReactComponentController::renderReactUI'
+    _title: 'My React UI'
+  requirements:
+    _access: 'TRUE'

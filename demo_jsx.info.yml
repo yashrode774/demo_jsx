@@ -1,0 +1,4 @@
+type: module
+name: Demo JSX
+description: 'JSX theme engine without using a full JSX theme'
+core_version_requirement: ^10 || ^11

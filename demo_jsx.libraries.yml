@@ -1,0 +1,4 @@
+demo_jsx.react:
+  version: VERSION
+  js:
+    app/dist.js: {}
