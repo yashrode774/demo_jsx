@@ -25,6 +25,7 @@ import FormElement from "./components/form/FormElement";
 import MenuMain from "./components/navigation/drupal/MenuMain";
 import BlockUmamiMainMenu
   from './components/navigation/drupal/BlockUmamiMainMenu';
+import CounterApp from './components/container/container';
 
 const components = {
   // Drupal Single Directory Components.
@@ -56,6 +57,7 @@ const components = {
   'drupal-form-element-label': FormElementLabel,
   'drupal-menu--main': MenuMain,
   'drupal-block--umami-jsx-main-menu': BlockUmamiMainMenu,
+  'drupal-container' : CounterApp,
 };
 
 export default components;
