@@ -25,7 +25,7 @@ import FormElement from "./components/form/FormElement";
 import MenuMain from "./components/navigation/drupal/MenuMain";
 import BlockUmamiMainMenu
   from './components/navigation/drupal/BlockUmamiMainMenu';
-import CounterApp from './components/container/container';
+import CounterApp from './components/container/Container';
 
 const components = {
   // Drupal Single Directory Components.

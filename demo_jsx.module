@@ -45,7 +45,7 @@ function demo_jsx_theme() {
   return [
     'container__demo_jsx' => [
       'variables' => ['content' => NULL],
-      'template' => 'container--demo_jsx',
+      'template' => 'container',
     ],
   ];
 }
