@@ -29,3 +29,23 @@ function demo_jsx_system_info_alter(array &$info, Extension $file, $type): void 
 //    print_r($type);
 //  }
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function demo_jsx_theme_suggestions_container_alter(array &$suggestions, array $variables) {
+  // Add a suggestion for your custom container template.
+  $suggestions[] = 'container__demo_jsx';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function demo_jsx_theme() {
+  return [
+    'container__demo_jsx' => [
+      'variables' => ['content' => NULL],
+      'template' => 'container--demo_jsx',
+    ],
+  ];
+}
