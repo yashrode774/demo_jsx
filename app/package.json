@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "build:preact": "./node_modules/.bin/esbuild src/index-preact.js --bundle --outfile=dist.js --alias:propsify=hyperscriptify-propsify-minimal --loader:.js=jsx --jsx=automatic --jsx-import-source=preact --jsx-factory=h --jsx-fragment=Fragment --minify",
+    "build:react": "node ./scripts/build-react.mjs",
+    "build:react-dev": "node ./scripts/build-react-dev.mjs",
+    "build:solid": "node ./scripts/build-solid.mjs",
+    "dev": "node ./scripts/watch-react.mjs"
+  },
+  "dependencies": {
+    "@linaria/esbuild": "^5.0.3",
+    "classnames": "^2.3.2",
+    "esbuild": "^0.19.2",
+    "esbuild-plugin-solid": "^0.5.0",
+    "hyperscriptify": "file:./local_packages/hyperscriptify",
+    "hyperscriptify-propsify-minimal": "file:./local_packages/hyperscriptify/propsify/minimal",
+    "hyperscriptify-propsify-standard": "file:./local_packages/hyperscriptify/propsify/standard",
+    "preact": "^10.17.1",
+    "propsify": "file:./local_packages/hyperscriptify/propsify/minimal",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "solid-js": "^1.7.12"
+  }
+}
