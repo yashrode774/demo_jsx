@@ -25,7 +25,7 @@ class ReactComponentController extends ControllerBase {
     $build['template_overriding'] = [
       '#type' => 'container',
       'insider' => ['#markup' => 'inside the container'],
-      'form_input' => ['#type' => 'textfield', '#title' => 'A text field']
+      'form_input' => ['#type' => 'textfield', '#prefix' => '<template hyperscriptify>', '#title' => 'A text field', '#suffix' => '</template>']
     ];
     return $build;
   }
