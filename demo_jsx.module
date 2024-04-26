@@ -3,49 +3,36 @@
 use Drupal\Core\Extension\Extension;
 
 /**
- * Implements hook_theme_suggestions_HOOK_alter() to conditionally suggest JSX templates.
- */
-function demo_jsx_theme_suggestions_block_alter(array &$suggestions, array $variables) {
-  $current_path = \Drupal::service('path.current')->getPath();
-  $temp=[] ;
-
-  foreach ($suggestions as $suggestion) {
-    if($suggestion == 'block__search_form_block'){
-      $temp[] = $variables['elements'];
-    }
-    if($suggestion == 'block__search'){
-      $variables['elements'] = $temp;
-    }
-  }
-}
-/**
  * Implements hook_system_info_alter().
  */
 function demo_jsx_system_info_alter(array &$info, Extension $file, $type): void {
   if ($type === 'theme') {
     $info['engine'] = 'jsx';
   }
-//  else{
-//    print_r($type);
-//  }
 }
 
-/**
- * Implements hook_theme_suggestions_HOOK_alter().
- */
-function demo_jsx_theme_suggestions_container_alter(array &$suggestions, array $variables) {
-  // Add a suggestion for your custom container template.
-  $suggestions[] = 'container__demo_jsx';
-}
+
+///**
+// * Implements hook_theme().
+// */
+//function demo_jsx_theme() {
+//  // This hook is for loading the new templates we define in the module
+//  // not for overriding.
+//  // refer:-https://www.drupal.org/forum/support/module-development-and-code-questions/2015-06-03/drupal-8-override-template-with#comment-11572031
+//  return [
+//    'container__demo_jsx' => [
+//      'variables' => ['content' => NULL],
+//      'template' => 'container',
+//      'base hook' => 'form_element',
+//      'path' => \Drupal::service('extension.list.module')->getPath('demo_jsx') . '/templates',
+//    ],
+//  ];
+//}
+
 
 /**
- * Implements hook_theme().
+ * Implements hook_theme_registry_alter
  */
-function demo_jsx_theme() {
-  return [
-    'container__demo_jsx' => [
-      'variables' => ['content' => NULL],
-      'template' => 'container',
-    ],
-  ];
+function demo_jsx_theme_registry_alter(&$theme_registry) {
+  $theme_registry['container']['path'] = \Drupal::service('extension.list.module')->getPath('demo_jsx') . '/templates';
 }
