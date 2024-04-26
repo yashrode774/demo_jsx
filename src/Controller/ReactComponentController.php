@@ -22,10 +22,10 @@ class ReactComponentController extends ControllerBase {
     //  - Once it's container.template-info.json we need to move it to inside <template hyperscriptify></template>
     //  -
     //  -
-    $build['template_overriding'] = [
+    $build['container'] = [
       '#type' => 'container',
-//      '#prefix' => '<template hyperscriptify>',
-//      '#suffix' => '</template>',
+      '#prefix' => '<template hyperscriptify>',
+      '#suffix' => '</template>',
       'insider' => ['#markup' => 'inside the container'],
       'form_input' => ['#type' => 'textfield', '#title' => 'A text field']
     ];
