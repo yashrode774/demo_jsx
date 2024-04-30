@@ -10,12 +10,6 @@ class ReactComponentController extends ControllerBase {
     // Attach the necessary library for React component.
     $build['#attached']['library'][] = 'demo_jsx/demo_jsx.react';
 
-    // Set up the markup for the React component.
-    // This needs to be wrapped in hyperscriptify.
-    $build['string'] = [
-      '#type' => 'inline_template',
-      '#template' => '<template hyperscriptify><div id="react-root">Try to render component?</div></template>',
-    ];
     // This is temporary, use it to confirm the module can override the theme template.
     // Once this works
     //  - Replace this with a container.template-info.json

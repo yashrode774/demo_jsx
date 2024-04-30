@@ -1,4 +1,5 @@
 {
+  "wrap": ["<template hyperscriptify>", "</template>"],
   "props": {
     "attributes":  "object",
     "children": "string",
