@@ -34,5 +34,13 @@ function demo_jsx_system_info_alter(array &$info, Extension $file, $type): void 
  * Implements hook_theme_registry_alter
  */
 function demo_jsx_theme_registry_alter(&$theme_registry) {
-  $theme_registry['container']['path'] = \Drupal::service('extension.list.module')->getPath('demo_jsx') . '/templates';
+  $current_path = \Drupal::service('path.current')->getPath();
+  if ($current_path == '/react-component') {
+    // If the path is react-component then only load the template-info.json file
+    // else it will load the container.twig file
+    $theme_registry['container']['path'] = \Drupal::service('extension.list.module')->getPath('demo_jsx') . '/templates/container';
+  }
+  else{
+    $theme_registry['container']['path'] = \Drupal::service('extension.list.module')->getPath('demo_jsx') . '/templates';
+  }
 }
